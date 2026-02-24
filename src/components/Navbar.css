@@ -1,0 +1,124 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-grey-mid);
+  height: var(--nav-height);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.navbar__logo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.navbar__links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.navbar__links li a {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  transition: var(--transition);
+}
+
+.navbar__links li a:hover {
+  color: var(--color-text-secondary);
+}
+
+.navbar__icons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.navbar__icons button {
+  color: var(--color-dark);
+  transition: var(--transition);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__icons button:hover {
+  color: var(--color-text-secondary);
+}
+
+.navbar__bag {
+  position: relative;
+}
+
+.navbar__badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--color-gold);
+  color: var(--color-dark);
+  font-size: 0.6rem;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__hamburger {
+  display: none;
+  color: var(--color-dark);
+}
+
+@media (max-width: 768px) {
+  .navbar__hamburger {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar__links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid var(--color-grey-mid);
+  }
+
+  .navbar__links--open {
+    display: flex;
+  }
+
+  .navbar__links li a {
+    display: block;
+    padding: var(--space-sm) var(--space-lg);
+    border-bottom: 1px solid var(--color-grey-light);
+  }
+
+  .navbar__logo {
+    font-size: 1rem;
+  }
+}

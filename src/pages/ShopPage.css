@@ -1,0 +1,115 @@
+.shop {
+  padding-top: var(--nav-height);
+}
+
+.shop__header {
+  background: var(--color-dark);
+  padding: var(--space-xl) 0;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.shop__header .section-pre {
+  color: var(--color-gold);
+}
+
+.shop__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: var(--color-white);
+  margin-bottom: 0.75rem;
+}
+
+.shop__sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+.shop__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) 0 var(--space-sm);
+  border-bottom: 1px solid var(--color-grey-mid);
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.shop__categories {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.shop__cat-btn {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+  border: 1.5px solid transparent;
+  background: transparent;
+  transition: var(--transition);
+}
+
+.shop__cat-btn:hover {
+  color: var(--color-dark);
+  border-color: var(--color-grey-mid);
+}
+
+.shop__cat-btn--active {
+  color: var(--color-dark);
+  border-color: var(--color-dark);
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.shop__sort {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.shop__sort select {
+  border: 1.5px solid var(--color-grey-mid);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-cream);
+  color: var(--color-dark);
+  font-size: 0.8rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.shop__count {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.08em;
+  padding: var(--space-sm) 0;
+}
+
+.shop__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  padding-bottom: var(--space-2xl);
+}
+
+@media (max-width: 1024px) {
+  .shop__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .shop__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .shop__grid { grid-template-columns: 1fr; }
+}
