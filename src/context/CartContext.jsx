@@ -1,41 +1,54 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 const CartContext = createContext(null);
 
-export function CartProvider({ children }) {
-  const [items, setItems] = useState([]);
+const STORAGE_KEY = 'mdt_cart';
 
-  const addItem = (product, quantity = 1, color = null) => {
+export function CartProvider({ children }) {
+  const [items, setItems] = useState(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored ? JSON.parse(stored) : [];
+    } catch { return []; }
+  });
+
+  // Persist to localStorage
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  }, [items]);
+
+  const addItem = (product, quantity = 1) => {
     setItems(prev => {
-      const key = `${product.id}-${color}`;
-      const existing = prev.find(i => `${i.id}-${i.color}` === key);
+      const existing = prev.find(i => i.id === product.id);
       if (existing) {
-        return prev.map(i =>
-          `${i.id}-${i.color}` === key ? { ...i, quantity: i.quantity + quantity } : i
-        );
+        return prev.map(i => i.id === product.id ? { ...i, quantity: i.quantity + quantity } : i);
       }
-      return [...prev, { ...product, quantity, color }];
+      return [...prev, { ...product, quantity }];
     });
   };
 
-  const removeItem = (id, color) => {
-    setItems(prev => prev.filter(i => !(i.id === id && i.color === color)));
+  const removeItem = (id) => {
+    setItems(prev => prev.filter(i => i.id !== id));
   };
 
-  const updateQuantity = (id, color, quantity) => {
-    if (quantity < 1) { removeItem(id, color); return; }
-    setItems(prev =>
-      prev.map(i => (i.id === id && i.color === color) ? { ...i, quantity } : i)
-    );
+  const updateQuantity = (id, quantity) => {
+    if (quantity < 1) { removeItem(id); return; }
+    setItems(prev => prev.map(i => i.id === id ? { ...i, quantity } : i));
   };
 
-  const clearCart = () => setItems([]);
+  const clearCart = () => {
+    setItems([]);
+    localStorage.removeItem(STORAGE_KEY);
+  };
 
   const totalItems = items.reduce((sum, i) => sum + i.quantity, 0);
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ items, addItem, removeItem, updateQuantity, clearCart, totalItems, subtotal }}>
+    <CartContext.Provider value={{
+      items, addItem, removeItem, updateQuantity, clearCart,
+      totalItems, subtotal,
+    }}>
       {children}
     </CartContext.Provider>
   );

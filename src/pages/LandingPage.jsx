@@ -23,11 +23,11 @@ export default function LandingPage() {
                 <div className="hero__bg" />
                 <div className="hero__content">
                     <p className="hero__pre">Est. MMI · Paris</p>
-                    <h1 className="hero__title">Curated indulgence.<br />Crafted beautifully.</h1>
+                    <h1 className="hero__title">Baked with love.<br />Savoured beautifully.</h1>
                     <p className="hero__sub">
-                        The pinnacle of artisanal luxury — where every object tells a story of exceptional skill and timeless beauty.
+                        The pinnacle of artisanal baking — where every creation tells a story of exceptional craft and timeless indulgence.
                     </p>
-                    <Link to="/shop" className="btn-primary hero__cta">Shop Collection</Link>
+                    <Link to="/shop" className="btn-primary hero__cta">Shop the Bakery</Link>
                 </div>
                 <div className="hero__scroll-hint">
                     <span>Scroll</span>
@@ -39,15 +39,15 @@ export default function LandingPage() {
             <section className="featured section">
                 <div className="container">
                     <div className="section-header">
-                        <p className="section-pre">Our Curation</p>
-                        <h2 className="section-title">Exquisite Selection</h2>
-                        <p className="section-sub">Objects of desire, selected for the discerning few.</p>
+                        <p className="section-pre">From Our Oven</p>
+                        <h2 className="section-title">Signature Creations</h2>
+                        <p className="section-sub">Each piece baked fresh daily, for the discerning palate.</p>
                     </div>
                     <div className="featured__grid">
                         {featured.map(p => <ProductCard key={p.id} product={p} />)}
                     </div>
                     <div className="featured__cta-wrap">
-                        <Link to="/shop" className="btn-outline">View All Pieces</Link>
+                        <Link to="/shop" className="btn-outline">View All Bakes</Link>
                     </div>
                 </div>
             </section>
@@ -57,16 +57,16 @@ export default function LandingPage() {
                 <div className="story-banner__inner container">
                     <div className="story-banner__text">
                         <p className="section-pre" style={{ color: 'var(--color-gold)' }}>Our Philosophy</p>
-                        <h2 className="story-banner__title">Where craft meets quiet luxury</h2>
+                        <h2 className="story-banner__title">Where craft meets quiet indulgence</h2>
                         <p className="story-banner__body">
-                            Maison du Toite was born from a singular belief: that the objects surrounding us should be as considered as the lives we lead. Each piece in our atelier is the result of a deep collaboration between heritage craftspeople and contemporary vision.
+                            Maison du Toite was born from a singular belief: that the food we share should be as considered as the lives we lead. Each creation in our atelier bakery is the result of a deep devotion to heritage technique and exceptional ingredients.
                         </p>
                         <Link to="/our-story" className="btn-primary">Discover Our Story</Link>
                     </div>
                     <div className="story-banner__image">
                         <img
-                            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=80"
-                            alt="Atelier craftsmanship"
+                            src="/bakery_story.png"
+                            alt="Artisan baker at work"
                         />
                     </div>
                 </div>
@@ -80,12 +80,12 @@ export default function LandingPage() {
                             <p className="section-pre">Exclusive Access</p>
                             <h2 className="membership__title">Join the Maison Circle</h2>
                             <p className="membership__sub">
-                                Private previews, styling sessions, and first access to limited editions — reserved for our inner circle.
+                                Early morning pre-orders, seasonal tasting events, and first access to limited editions — reserved for our inner circle.
                             </p>
                         </div>
                         {subscribed ? (
                             <div className="membership__success">
-                                <p>Welcome to the Maison Circle. We'll be in touch.</p>
+                                <p>Welcome to the Maison Circle. We'll have fresh pastries waiting for you.</p>
                             </div>
                         ) : (
                             <form className="membership__form" onSubmit={handleSubscribe}>

@@ -17,16 +17,16 @@ export default function OurStoryPage() {
                 <div className="story__grid">
                     <div className="story__text">
                         <p className="section-pre">The Beginning</p>
-                        <h2 className="story__heading">Born from a belief in beautiful objects</h2>
+                        <h2 className="story__heading">Born from a love of beautiful baking</h2>
                         <p>
-                            Maison du Toite was founded in the early 2000s by two artisans who shared a singular conviction: that the objects we live with should be made to endure, to inspire, and to bring quiet beauty into everyday life.
+                            Maison du Toite was founded in the early 2000s by two pastry chefs who shared a singular conviction: that the things we eat should be made to inspire, to comfort, and to bring quiet beauty into everyday moments.
                         </p>
                         <p>
-                            Our name — meaning "House of the Rooftop" — reflects our origins in a small Parisian atelier, perched above the city's rooftops, where craft and contemplation went hand in hand.
+                            Our name — meaning “House of the Rooftop” — reflects our origins in a small Parisian atelier perched above the city’s rooftops, where flour, butter, and contemplation went hand in hand.
                         </p>
                     </div>
                     <div className="story__img-wrap">
-                        <img src="https://images.unsplash.com/photo-1616047006789-b53439c2d53a?w=800&q=80" alt="The atelier" />
+                        <img src="/bakery_story.png" alt="The bakery atelier" />
                     </div>
                 </div>
             </section>
@@ -39,9 +39,9 @@ export default function OurStoryPage() {
                     </div>
                     <div className="story__values-grid">
                         {[
-                            { title: 'Craft', body: 'Every piece begins with the hands of a skilled artisan. We partner exclusively with heritage workshops that share our commitment to traditional techniques.' },
-                            { title: 'Longevity', body: 'We design for permanence. Our objects are made to outlast their owners, carrying their stories forward through generations.' },
-                            { title: 'Restraint', body: 'We believe in doing less, but doing it exceptionally. Our edit is small by design — every piece earns its place.' },
+                            { title: 'Craft', body: 'Every creation begins with the hands of a trained pastry chef. We source exclusively from heritage suppliers that share our commitment to traditional techniques and exceptional ingredients.' },
+                            { title: 'Freshness', body: 'We bake each morning and serve until sold out. No preservatives, no shortcuts. Our day ends when the last tray empties.' },
+                            { title: 'Restraint', body: 'We believe in baking fewer things, but baking them exceptionally well. Our menu is small by design — every item earns its place.' },
                         ].map(v => (
                             <div key={v.title} className="story__value-card">
                                 <h3>{v.title}</h3>
@@ -53,7 +53,7 @@ export default function OurStoryPage() {
             </section>
 
             <div className="story__cta container">
-                <Link to="/shop" className="btn-primary">Explore the Collection</Link>
+                <Link to="/shop" className="btn-primary">Explore the Bakery</Link>
             </div>
 
             <Footer />

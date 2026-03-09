@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { Minus, Plus, Trash2 } from 'lucide-react';
 import './CartPage.css';
@@ -73,33 +73,11 @@ export default function CartPage() {
                         ))}
                     </div>
 
-                    {/* Shipping form */}
-                    <form className="cart__shipping-form" onSubmit={handleCheckout}>
-                        <h2 className="cart__form-title">Shipping Details</h2>
-                        <div className="cart__form-grid">
-                            <div className="cart__field">
-                                <label>Full Name</label>
-                                <input name="name" value={form.name} onChange={handleField} required placeholder="Jane Doe" />
-                            </div>
-                            <div className="cart__field">
-                                <label>Email</label>
-                                <input type="email" name="email" value={form.email} onChange={handleField} required placeholder="jane@example.com" />
-                            </div>
-                            <div className="cart__field cart__field--full">
-                                <label>Street Address</label>
-                                <input name="address" value={form.address} onChange={handleField} required placeholder="14 Rue de Rivoli" />
-                            </div>
-                            <div className="cart__field">
-                                <label>City</label>
-                                <input name="city" value={form.city} onChange={handleField} required placeholder="Paris" />
-                            </div>
-                            <div className="cart__field">
-                                <label>Postal Code</label>
-                                <input name="zip" value={form.zip} onChange={handleField} required placeholder="75001" />
-                            </div>
-                        </div>
-                        <button type="submit" className="btn-primary cart__checkout-btn">Complete Order</button>
-                    </form>
+                    <div className="cart__actions">
+                        <Link to="/checkout" className="btn-primary cart__checkout-btn" style={{ width: '100%', display: 'block', textAlign: 'center', marginTop: '1rem' }}>
+                            Proceed to Checkout
+                        </Link>
+                    </div>
                 </div>
 
                 {/* Right – Summary */}

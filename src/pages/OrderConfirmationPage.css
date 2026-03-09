@@ -1,93 +1,87 @@
-.confirm {
-  padding-top: var(--nav-height);
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
+.confirmation-page { padding-bottom: var(--space-2xl); }
+.confirmation-page__inner { max-width: 640px; padding-top: var(--space-2xl); }
+
+.confirmation-header { text-align: center; margin-bottom: var(--space-xl); }
+
+.confirmation-check {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-white);
+  font-size: 1.8rem;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto var(--space-md);
 }
 
-.confirm__inner {
-  padding: var(--space-2xl) var(--space-lg);
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
-}
-
-.confirm__icon {
-  color: var(--color-gold);
-  animation: iconPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
-
-@keyframes iconPop {
-  from { transform: scale(0); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.confirm__pre {
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
+.confirmation-pre {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
 }
 
-.confirm__title {
+.confirmation-title {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 400;
-  line-height: 1.2;
+  margin-bottom: var(--space-sm);
 }
 
-.confirm__sub {
-  font-size: 0.9rem;
+.confirmation-sub {
   color: var(--color-text-secondary);
-  line-height: 1.8;
-  max-width: 420px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
-.confirm__info {
-  width: 100%;
-  background: var(--color-grey-light);
+/* WhatsApp card */
+.confirmation-wa-card {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-grey-mid);
   border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  margin: var(--space-sm) 0;
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow-md);
 }
 
-.confirm__info-item {
+.confirmation-wa-card__header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: 0.85rem;
-  padding-bottom: var(--space-sm);
+  gap: 0.6rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--color-grey-light);
   border-bottom: 1px solid var(--color-grey-mid);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
-.confirm__info-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.confirm__info-label {
-  color: var(--color-text-secondary);
-  font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.confirm__info-value {
-  font-weight: 500;
+.confirmation-wa-card__message {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  padding: 1.25rem;
+  white-space: pre-wrap;
   color: var(--color-dark);
+  max-height: 320px;
+  overflow-y: auto;
 }
 
-.confirm__actions {
+.confirmation-wa-card__actions {
   display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--color-grey-mid);
 }
+
+.confirmation-wa-card__fallback {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  border-top: 1px solid var(--color-grey-mid);
+}
+.confirmation-wa-card__fallback a { color: var(--color-dark); text-decoration: underline; }
+
+.confirmation-actions { text-align: center; margin-top: var(--space-lg); }

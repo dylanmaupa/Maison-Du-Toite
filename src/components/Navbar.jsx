@@ -20,9 +20,8 @@ export default function Navbar() {
 
                 {/* Nav links */}
                 <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
-                    <li><Link to="/shop" onClick={() => setMenuOpen(false)}>Collections</Link></li>
-                    <li><Link to="/shop?filter=new" onClick={() => setMenuOpen(false)}>New Arrivals</Link></li>
-                    <li><Link to="/shop?filter=bespoke" onClick={() => setMenuOpen(false)}>Bespoke</Link></li>
+                    <li><Link to="/shop" onClick={() => setMenuOpen(false)}>Pastries</Link></li>
+                    <li><Link to="/shop?filter=new" onClick={() => setMenuOpen(false)}>Seasonal</Link></li>
                     <li><Link to="/our-story" onClick={() => setMenuOpen(false)}>Our Story</Link></li>
                 </ul>
 
