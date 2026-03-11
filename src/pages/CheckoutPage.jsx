@@ -37,7 +37,7 @@ export default function CheckoutPage() {
         setCalculatingDistance(true);
         try {
             // Sam Levi Village, Borrowdale, Harare
-            const originStr = "-18.33801205,29.91343784"; // Format is lat,lon
+            const originStr = "-17.7505,31.0845"; // Format is lat,lon
             const destStr = `${destCoords.lat},${destCoords.lon}`;
 
             const res = await fetch(`https://api.geoapify.com/v1/routing?waypoints=${originStr}|${destStr}&mode=drive&apiKey=${import.meta.env.VITE_GEOAPIFY_API_KEY}`);
