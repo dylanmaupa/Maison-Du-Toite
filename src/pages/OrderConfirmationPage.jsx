@@ -126,6 +126,7 @@ export default function OrderConfirmationPage() {
                                 <h3 style={{ fontFamily: 'var(--font-serif)', marginBottom: '1rem' }}>Order Details</h3>
                                 <p><strong>Order Number:</strong> {order.order_number}</p>
                                 <p><strong>Name:</strong> {order.customer_name}</p>
+                                <p><strong>Phone:</strong> {order.phone || 'N/A'}</p>
                                 <p><strong>Delivery Method:</strong> {order.delivery_method === 'delivery' ? 'Delivery' : 'Pickup'}</p>
                                 <p><strong>Total:</strong> ${Number(order.total).toFixed(2)}</p>
                             </div>

@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import ProductCard from '../components/ProductCard';
 import Footer from '../components/Footer';
+import FadeIn from '../components/animations/FadeIn';
 import { PRODUCTS, CATEGORIES } from '../data/products';
 import './ShopPage.css';
 
@@ -19,22 +20,25 @@ export default function ShopPage() {
         <main className="shop">
             {/* Header */}
             <div className="shop__header">
-                <div className="container">
+                <FadeIn className="container">
                     <p className="section-pre">The Atelier</p>
                     <h1 className="shop__title">Our Collection</h1>
                     <p className="shop__sub">Each piece is chosen for its enduring beauty and exceptional craft.</p>
-                </div>
+                </FadeIn>
             </div>
 
             <div className="container">
                 {/* Filters & Sort */}
-                <div className="shop__controls">
+                <FadeIn className="shop__controls">
                     <div className="shop__categories">
                         {CATEGORIES.map(cat => (
                             <button
                                 key={cat}
                                 className={`shop__cat-btn ${activeCategory === cat ? 'shop__cat-btn--active' : ''}`}
-                                onClick={() => setActiveCategory(cat)}
+                                onClick={() => {
+                                    setActiveCategory(cat);
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }}
                             >
                                 {cat}
                             </button>
@@ -48,14 +52,14 @@ export default function ShopPage() {
                             <option value="price-desc">Price: High to Low</option>
                         </select>
                     </div>
-                </div>
+                </FadeIn>
 
-                <p className="shop__count">{filtered.length} pieces</p>
+                <FadeIn className="shop__count" delay={0.1}>{filtered.length} pieces</FadeIn>
 
                 {/* Grid */}
-                <div className="shop__grid">
+                <FadeIn className="shop__grid" delay={0.2}>
                     {filtered.map(p => <ProductCard key={p.id} product={p} />)}
-                </div>
+                </FadeIn>
             </div>
 
             <div style={{ marginTop: 'var(--space-2xl)' }}>

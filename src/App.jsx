@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { AnimatePresence } from 'framer-motion';
+import PageTransition from './components/animations/PageTransition';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
@@ -42,10 +44,15 @@ function AdminRoute({ children }) {
 
 // ── Store Layout (Navbar wraps store pages only) ──────────────────────────
 function StoreLayout({ children }) {
+  const location = useLocation();
   return (
     <>
       <Navbar />
-      {children}
+      <AnimatePresence mode="wait">
+        <PageTransition key={location.pathname}>
+          {children}
+        </PageTransition>
+      </AnimatePresence>
     </>
   );
 }

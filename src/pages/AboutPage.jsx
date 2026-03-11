@@ -1,23 +1,25 @@
 import Footer from '../components/Footer';
+import FadeIn from '../components/animations/FadeIn';
 import './OurStoryPage.css';
 import './LandingPage.css';
 
 export default function AboutPage() {
     return (
         <main>
-            <div className="page-header">
+            <FadeIn className="page-header" delay={0.1}>
                 <p className="page-header__pre">Est. MMI · Paris</p>
                 <h1 className="page-header__title">About Maison du Toite</h1>
                 <p className="page-header__sub">A story told through flour, butter, and devotion.</p>
-            </div>
+            </FadeIn>
 
             <section className="story__section container" style={{ padding: 'var(--space-2xl) auto' }}>
-                <div className="story__grid" style={{ marginTop: 'var(--space-xl)' }}>
+            <section className="story__section container" style={{ padding: 'var(--space-2xl) auto' }}>
+                <FadeIn className="story__grid" style={{ marginTop: 'var(--space-xl)' }}>
                     <div className="story__text">
                         <p className="section-pre">Who We Are</p>
                         <h2 className="story__heading">A Parisian atelier, born above the rooftops</h2>
                         <p>
-                            Maison du Toite was founded by two pastry chefs who believed that food should be as considered as the lives we lead. What began as a small atelier perched above the Parisian skyline has grown into a beloved boutique bakery, still guided by the same quiet devotion to craft.
+                            Maison du Toite was founded by two pastry chefs who believed that food should be as considered as the lives we lead. What began as a small atelier perched above the Parisian skyline has grown into a beloved boutique Bakery, still guided by the same quiet devotion to craft.
                         </p>
                         <p style={{ marginTop: '1rem' }}>
                             Every item on our menu is baked fresh each morning, using only premium ingredients sourced from trusted artisan suppliers. We bake in small batches — not because it is easy, but because it is right.
@@ -29,11 +31,13 @@ export default function AboutPage() {
                     <div className="story__img-wrap">
                         <img src="/bakery_story.png" alt="Maison du Toite bakery atelier" />
                     </div>
-                </div>
+                </FadeIn>
+            </section>
             </section>
 
             <section className="story__values">
-                <div className="container">
+            <section className="story__values">
+                <FadeIn className="container">
                     <div className="section-header">
                         <p className="section-pre">What Guides Us</p>
                         <h2 className="section-title">Our Values</h2>
@@ -50,7 +54,8 @@ export default function AboutPage() {
                             </div>
                         ))}
                     </div>
-                </div>
+                </FadeIn>
+            </section>
             </section>
 
             <Footer />

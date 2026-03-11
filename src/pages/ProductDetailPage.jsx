@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { PRODUCTS } from '../data/products';
 import { useCart } from '../context/CartContext';
 import Footer from '../components/Footer';
+import FadeIn from '../components/animations/FadeIn';
 import './ProductDetailPage.css';
 import { ChevronLeft, ChevronRight, Minus, Plus } from 'lucide-react';
 
@@ -36,7 +37,7 @@ export default function ProductDetailPage() {
         <main className="pdp">
             <div className="pdp__inner container">
                 {/* Gallery */}
-                <div className="pdp__gallery">
+                <FadeIn className="pdp__gallery">
                     <div className="pdp__main-img-wrap">
                         <img src={product.images[imgIndex]} alt={product.name} className="pdp__main-img" />
                         {product.images.length > 1 && (
@@ -61,10 +62,10 @@ export default function ProductDetailPage() {
                             </button>
                         ))}
                     </div>
-                </div>
+                </FadeIn>
 
                 {/* Info */}
-                <div className="pdp__info">
+                <FadeIn className="pdp__info" delay={0.2}>
                     {product.tag && <span className="label-tag pdp__tag">{product.tag}</span>}
                     <p className="pdp__category">{product.category}</p>
                     <h1 className="pdp__name">{product.name}</h1>
@@ -112,24 +113,26 @@ export default function ProductDetailPage() {
                         <p>Free shipping on orders over $500</p>
                         <p>Returns within 14 days</p>
                     </div>
-                </div>
+                </FadeIn>
             </div>
 
             {/* Related */}
             {related.length > 0 && (
                 <section className="pdp__related container">
-                    <h2 className="pdp__related-title">You May Also Desire</h2>
-                    <div className="pdp__related-grid">
-                        {related.map(p => (
-                            <div key={p.id} className="pdp__related-card" onClick={() => navigate(`/product/${p.id}`)}>
-                                <div className="pdp__related-img-wrap">
-                                    <img src={p.images[0]} alt={p.name} />
+                    <FadeIn>
+                        <h2 className="pdp__related-title">You May Also Desire</h2>
+                        <div className="pdp__related-grid">
+                            {related.map(p => (
+                                <div key={p.id} className="pdp__related-card" onClick={() => navigate(`/product/${p.id}`)}>
+                                    <div className="pdp__related-img-wrap">
+                                        <img src={p.images[0]} alt={p.name} />
+                                    </div>
+                                    <p className="pdp__related-name">{p.name}</p>
+                                    <p className="pdp__related-price">${p.price.toLocaleString()}</p>
                                 </div>
-                                <p className="pdp__related-name">{p.name}</p>
-                                <p className="pdp__related-price">${p.price.toLocaleString()}</p>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                    </FadeIn>
                 </section>
             )}
 

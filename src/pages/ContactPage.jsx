@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Footer from '../components/Footer';
+import FadeIn from '../components/animations/FadeIn';
 
 export default function ContactPage() {
     const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
@@ -19,14 +20,14 @@ export default function ContactPage() {
 
     return (
         <main>
-            <div className="page-header">
+            <FadeIn className="page-header" delay={0.1}>
                 <p className="page-header__pre">Get in Touch</p>
                 <h1 className="page-header__title">Contact Us</h1>
                 <p className="page-header__sub">We'd love to hear from you.</p>
-            </div>
+            </FadeIn>
 
             <section className="section container" style={{ maxWidth: 860, marginTop: 'var(--space-xl)' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-xl)', alignItems: 'start' }}>
+                <FadeIn style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-xl)', alignItems: 'start' }}>
 
                     {/* Info */}
                     <div>
@@ -82,7 +83,7 @@ export default function ContactPage() {
                             <button className="btn-outline" onClick={() => setSent(false)} style={{ marginTop: 'var(--space-md)' }}>Send another</button>
                         </div>
                     )}
-                </div>
+                </FadeIn>
             </section>
 
             <Footer />

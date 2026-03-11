@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import { PRODUCTS } from '../data/products';
 import Footer from '../components/Footer';
+import FadeIn from '../components/animations/FadeIn';
 import './LandingPage.css';
 
 export default function LandingPage() {
@@ -21,14 +22,14 @@ export default function LandingPage() {
             {/* ── Hero ── */}
             <section className="hero">
                 <div className="hero__bg" />
-                <div className="hero__content">
+                <FadeIn className="hero__content" delay={0.2}>
                     <p className="hero__pre">Est. MMI · Paris</p>
                     <h1 className="hero__title">Baked with love.<br />Savoured beautifully.</h1>
                     <p className="hero__sub">
                         The pinnacle of artisanal baking — where every creation tells a story of exceptional craft and timeless indulgence.
                     </p>
                     <Link to="/shop" className="btn-primary hero__cta">Shop the Bakery</Link>
-                </div>
+                </FadeIn>
                 <div className="hero__scroll-hint">
                     <span>Scroll</span>
                     <div className="hero__scroll-line" />
@@ -37,7 +38,7 @@ export default function LandingPage() {
 
             {/* ── Featured Products ── */}
             <section className="featured section">
-                <div className="container">
+                <FadeIn className="container">
                     <div className="section-header">
                         <p className="section-pre">From Our Oven</p>
                         <h2 className="section-title">Signature Creations</h2>
@@ -49,12 +50,12 @@ export default function LandingPage() {
                     <div className="featured__cta-wrap">
                         <Link to="/shop" className="btn-outline">View All Bakes</Link>
                     </div>
-                </div>
+                </FadeIn>
             </section>
 
             {/* ── Brand Story Banner ── */}
             <section className="story-banner">
-                <div className="story-banner__inner container">
+                <FadeIn className="story-banner__inner container">
                     <div className="story-banner__text">
                         <p className="section-pre" style={{ color: 'var(--color-gold)' }}>Our Philosophy</p>
                         <h2 className="story-banner__title">Where craft meets quiet indulgence</h2>
@@ -69,12 +70,12 @@ export default function LandingPage() {
                             alt="Artisan baker at work"
                         />
                     </div>
-                </div>
+                </FadeIn>
             </section>
 
             {/* ── Membership ── */}
             <section className="membership section">
-                <div className="container">
+                <FadeIn className="container">
                     <div className="membership__inner">
                         <div className="membership__text">
                             <p className="section-pre">Exclusive Access</p>
@@ -101,7 +102,7 @@ export default function LandingPage() {
                             </form>
                         )}
                     </div>
-                </div>
+                </FadeIn>
             </section>
 
             <Footer />

@@ -226,7 +226,7 @@ export default function CheckoutPage() {
                                 {errors.customer_name && <p className="form-error">{errors.customer_name}</p>}
                             </div>
                             <div className="form-group">
-                                <label htmlFor="phone">Phone Number</label>
+                                <label htmlFor="phone">Phone / WhatsApp Number</label>
                                 <input id="phone" type="tel" className="form-input" value={form.phone}
                                     onChange={e => set('phone', e.target.value)} />
                                 {errors.phone && <p className="form-error">{errors.phone}</p>}

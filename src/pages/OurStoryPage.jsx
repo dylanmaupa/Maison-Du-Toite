@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import FadeIn from '../components/animations/FadeIn';
 import './OurStoryPage.css';
 
 export default function OurStoryPage() {
@@ -7,14 +8,14 @@ export default function OurStoryPage() {
         <main className="story">
             <div className="story__hero">
                 <div className="story__hero-bg" />
-                <div className="story__hero-content">
+                <FadeIn className="story__hero-content" delay={0.2}>
                     <p className="section-pre" style={{ color: 'var(--color-gold)' }}>Est. MMI · Paris</p>
                     <h1 className="story__hero-title">Our Story</h1>
-                </div>
+                </FadeIn>
             </div>
 
             <section className="story__section container">
-                <div className="story__grid">
+                <FadeIn className="story__grid">
                     <div className="story__text">
                         <p className="section-pre">The Beginning</p>
                         <h2 className="story__heading">Born from a love of beautiful baking</h2>
@@ -28,11 +29,11 @@ export default function OurStoryPage() {
                     <div className="story__img-wrap">
                         <img src="/bakery_story.png" alt="The bakery atelier" />
                     </div>
-                </div>
+                </FadeIn>
             </section>
 
             <section className="story__values">
-                <div className="container">
+                <FadeIn className="container">
                     <div className="section-header">
                         <p className="section-pre">What Guides Us</p>
                         <h2 className="section-title">Our Values</h2>
@@ -49,12 +50,12 @@ export default function OurStoryPage() {
                             </div>
                         ))}
                     </div>
-                </div>
+                </FadeIn>
             </section>
 
-            <div className="story__cta container">
+            <FadeIn className="story__cta container">
                 <Link to="/shop" className="btn-primary">Explore the Bakery</Link>
-            </div>
+            </FadeIn>
 
             <Footer />
         </main>
