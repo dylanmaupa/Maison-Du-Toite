@@ -20,7 +20,7 @@ export default function OurStoryPage() {
                         <p className="section-pre">The Beginning</p>
                         <h2 className="story__heading">Born from a love of beautiful baking</h2>
                         <p>
-                            Maison du Toite was founded in the early 2000s by two pastry chefs who shared a singular conviction: that the things we eat should be made to inspire, to comfort, and to bring quiet beauty into everyday moments.
+                            Maison du Torte was founded in the early 2000s by two pastry chefs who shared a singular conviction: that the things we eat should be made to inspire, to comfort, and to bring quiet beauty into everyday moments.
                         </p>
                         <p>
                             Our name — meaning “House of the Rooftop” — reflects our origins in a small Parisian atelier perched above the city’s rooftops, where flour, butter, and contemplation went hand in hand.

@@ -60,7 +60,7 @@ export default function LandingPage() {
                         <p className="section-pre" style={{ color: 'var(--color-gold)' }}>Our Philosophy</p>
                         <h2 className="story-banner__title">Where craft meets quiet indulgence</h2>
                         <p className="story-banner__body">
-                            Maison du Toite was born from a singular belief: that the food we share should be as considered as the lives we lead. Each creation in our atelier bakery is the result of a deep devotion to heritage technique and exceptional ingredients.
+                            Maison du Torte was born from a singular belief: that the food we share should be as considered as the lives we lead. Each creation in our atelier bakery is the result of a deep devotion to heritage technique and exceptional ingredients.
                         </p>
                         <Link to="/our-story" className="btn-primary">Discover Our Story</Link>
                     </div>

@@ -44,7 +44,7 @@ export default function OrderConfirmationPage() {
                 format: [canvas.width / 2, canvas.height / 2]
             });
             pdf.addImage(imgData, 'PNG', 0, 0, canvas.width / 2, canvas.height / 2);
-            pdf.save(`Maison_Du_Toite_Receipt_${order.order_number}.pdf`);
+            pdf.save(`Maison_Du_Torte_Receipt_${order.order_number}.pdf`);
         } catch (err) {
             console.error('Failed to generate receipt', err);
         } finally {

@@ -42,7 +42,7 @@ export default function AdminLogin() {
             }}>
                 <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                     <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', marginBottom: '0.4rem' }}>
-                        Maison du Toite
+                        Maison du Torte
                     </h1>
                     <p style={{ fontSize: '0.7rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-gold)' }}>
                         Admin Portal

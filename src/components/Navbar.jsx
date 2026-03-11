@@ -26,7 +26,7 @@ export default function Navbar() {
                 </ul>
 
                 {/* Logo */}
-                <Link to="/" className="navbar__logo">Maison du Toite</Link>
+                <Link to="/" className="navbar__logo">Maison du Torte</Link>
 
                 {/* Icons */}
                 <div className="navbar__icons">

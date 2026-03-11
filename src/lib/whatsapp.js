@@ -9,7 +9,7 @@ export function buildWhatsAppMessage(order, items) {
     .join('\n');
 
   const message = `
-MAISON DU TOITE – CASH ON DELIVERY ORDER
+MAISON DU TORTE – CASH ON DELIVERY ORDER
 
 Order ID: ${order.order_number}
 Name: ${order.customer_name}

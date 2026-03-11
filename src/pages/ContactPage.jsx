@@ -13,7 +13,7 @@ export default function ContactPage() {
     const handleSubmit = e => {
         e.preventDefault();
         // For now: open WhatsApp with the contact message
-        const msg = `Hi Maison du Toite,\n\nName: ${form.name}\nEmail: ${form.email}\nSubject: ${form.subject}\n\n${form.message}`;
+        const msg = `Hi Maison du Torte,\n\nName: ${form.name}\nEmail: ${form.email}\nSubject: ${form.subject}\n\n${form.message}`;
         window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
         setSent(true);
     };
@@ -33,7 +33,7 @@ export default function ContactPage() {
                     <div>
                         <p className="section-pre">Visit & Order</p>
                         <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', marginBottom: 'var(--space-sm)' }}>
-                            Maison du Toite
+                            Maison du Torte
                         </h2>
                         <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-md)' }}>
                             Exclusively available for delivery and pickup orders. Reach us via WhatsApp for the fastest response.

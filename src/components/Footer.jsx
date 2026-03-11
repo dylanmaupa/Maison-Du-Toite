@@ -6,7 +6,7 @@ export default function Footer() {
         <footer className="footer">
             <div className="footer__inner container">
                 <div className="footer__brand">
-                    <span className="footer__logo">Maison du Toite</span>
+                    <span className="footer__logo">Maison du Torte</span>
                     <p className="footer__tagline">Baked with love. Savoured beautifully.</p>
                 </div>
 
@@ -39,7 +39,7 @@ export default function Footer() {
             </div>
 
             <div className="footer__bottom container">
-                <p>© {new Date().getFullYear()} Maison du Toite. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} Maison du Torte. All rights reserved.</p>
                 <div className="footer__legal">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>

@@ -29,7 +29,7 @@ export default function AdminLayout({ children, title }) {
             {/* Sidebar */}
             <aside className="admin-sidebar">
                 <div className="admin-sidebar__brand">
-                    <span className="admin-sidebar__logo">Maison du Toite</span>
+                    <span className="admin-sidebar__logo">Maison du Torte</span>
                     <span className="admin-sidebar__role">Admin</span>
                 </div>
 
