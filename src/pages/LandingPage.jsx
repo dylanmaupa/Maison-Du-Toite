@@ -4,6 +4,7 @@ import ProductCard from '../components/ProductCard';
 import { PRODUCTS } from '../data/products';
 import Footer from '../components/Footer';
 import FadeIn from '../components/animations/FadeIn';
+import SEO from '../components/SEO';
 import './LandingPage.css';
 
 export default function LandingPage() {
@@ -18,6 +19,7 @@ export default function LandingPage() {
 
     return (
         <main className="landing">
+            <SEO />
 
             {/* ── Hero ── */}
             <section className="hero">

@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import ProductCard from '../components/ProductCard';
 import Footer from '../components/Footer';
 import FadeIn from '../components/animations/FadeIn';
+import SEO from '../components/SEO';
 import { PRODUCTS, CATEGORIES } from '../data/products';
 import './ShopPage.css';
 
@@ -18,6 +19,10 @@ export default function ShopPage() {
 
     return (
         <main className="shop">
+            <SEO 
+                title="Shop | Maison du Torte" 
+                description="Explore our collection of exceptional artisanal pastries and cakes."
+            />
             {/* Header */}
             <div className="shop__header">
                 <FadeIn className="container">

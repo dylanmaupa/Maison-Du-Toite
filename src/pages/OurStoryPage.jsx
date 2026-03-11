@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import FadeIn from '../components/animations/FadeIn';
+import SEO from '../components/SEO';
 import './OurStoryPage.css';
 
 export default function OurStoryPage() {
     return (
         <main className="story">
+            <SEO 
+                title="Our Story | Maison du Torte" 
+                description="Born from a love of beautiful baking. Discover the origins of our Parisian atelier."
+            />
             <div className="story__hero">
                 <div className="story__hero-bg" />
                 <FadeIn className="story__hero-content" delay={0.2}>

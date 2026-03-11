@@ -4,6 +4,7 @@ import { PRODUCTS } from '../data/products';
 import { useCart } from '../context/CartContext';
 import Footer from '../components/Footer';
 import FadeIn from '../components/animations/FadeIn';
+import SEO from '../components/SEO';
 import './ProductDetailPage.css';
 import { ChevronLeft, ChevronRight, Minus, Plus } from 'lucide-react';
 
@@ -35,6 +36,11 @@ export default function ProductDetailPage() {
 
     return (
         <main className="pdp">
+            <SEO 
+                title={`${product.name} | Maison du Torte`} 
+                description={product.description}
+                url={`https://maisondutorte.com/product/${product.id}`}
+            />
             <div className="pdp__inner container">
                 {/* Gallery */}
                 <FadeIn className="pdp__gallery">

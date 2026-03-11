@@ -1,11 +1,16 @@
 import Footer from '../components/Footer';
 import FadeIn from '../components/animations/FadeIn';
+import SEO from '../components/SEO';
 import './OurStoryPage.css';
 import './LandingPage.css';
 
 export default function AboutPage() {
     return (
         <main>
+            <SEO 
+                title="About Us | Maison du Torte" 
+                description="A story told through flour, butter, and devotion. Meet the pastry chefs behind the craft."
+            />
             <FadeIn className="page-header" delay={0.1}>
                 <p className="page-header__pre">Est. MMI · Paris</p>
                 <h1 className="page-header__title">About Maison du Torte</h1>

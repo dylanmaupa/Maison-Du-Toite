@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from 'framer-motion';
 import PageTransition from './components/animations/PageTransition';
 import { CartProvider } from './context/CartContext';
@@ -59,8 +60,9 @@ function StoreLayout({ children }) {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <AuthProvider>
+    <HelmetProvider>
+      <BrowserRouter>
+        <AuthProvider>
         <CartProvider>
           <Toaster
             position="top-center"
@@ -103,5 +105,6 @@ export default function App() {
         </CartProvider>
       </AuthProvider>
     </BrowserRouter>
+    </HelmetProvider>
   );
 }

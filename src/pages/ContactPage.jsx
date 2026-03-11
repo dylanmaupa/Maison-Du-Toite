@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Footer from '../components/Footer';
 import FadeIn from '../components/animations/FadeIn';
+import SEO from '../components/SEO';
 
 export default function ContactPage() {
     const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
@@ -20,6 +21,10 @@ export default function ContactPage() {
 
     return (
         <main>
+            <SEO 
+                title="Contact | Maison du Torte" 
+                description="Get in touch for orders or inquiries. Exclusively available for delivery and pickup."
+            />
             <FadeIn className="page-header" delay={0.1}>
                 <p className="page-header__pre">Get in Touch</p>
                 <h1 className="page-header__title">Contact Us</h1>
